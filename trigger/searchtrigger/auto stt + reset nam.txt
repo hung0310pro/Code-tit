@@ -1,0 +1,33 @@
+begin
+declare xuatkhokehoach int;
+declare xuatkhokehoachmoi int;
+declare a varchar(5);
+declare namhientai int;
+declare namcno int;
+
+set namhientai = DATE_FORMAT(CURDATE(),'%y');
+set namcno = (select Year from cno where Modulename = 'xuatkhokehoach');
+
+if (namhientai != namcno) then
+    update cno set Year = namhientai where Modulename = 'xuatkhokehoach';
+    update cno set Cno = 0 where Modulename = 'xuatkhokehoach';
+end if;
+
+set xuatkhokehoach = (select Cno from cno where Modulename = 'xuatkhokehoach');
+set xuatkhokehoachmoi = xuatkhokehoach +1;
+
+set a = '0000';
+if(xuatkhokehoachmoi>9999)then
+set a = '';
+elseif(xuatkhokehoachmoi>999) then
+set a ='0';
+elseif(xuatkhokehoachmoi>99) then
+set a ='00';
+elseif(xuatkhokehoachmoi>9) then
+set a ='000';
+end if;
+
+set new.Tv7uqcb_gM9yfI = concat('XHKH-',a,xuatkhokehoachmoi,'/',namhientai);
+update cno set Cno = xuatkhokehoachmoi where Modulename = 'xuatkhokehoach';
+
+end

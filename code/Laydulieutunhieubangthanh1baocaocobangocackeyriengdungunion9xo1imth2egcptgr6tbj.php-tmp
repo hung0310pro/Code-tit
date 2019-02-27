@@ -1,0 +1,136 @@
+<?php
+require_once "tit.php";
+$conn = new titAuth($servername, $username, $password, $dbname);
+if (isset($_GET['xem'])) {
+	$this->layout('Student/layout2');
+	function laylk($conn, $id, $str) {
+		$id      = empty($id)?0:$id;
+		$sql     = 'select * from nameform where Nameform_code="'.$str.'"';
+		$result  = select_info($conn, $sql);
+		$sql     = 'select '.$result['Nameform_pfieldshow'].' as tt from '.$result['Nameform_pmodule'].' where '.$result['Nameform_pfieldid'].' = '.$id;
+		$result2 = select_info($conn, $sql)['tt'];
+		return $result2;
+	}
+
+	$tungay    = $_POST['tungay'];
+	$denngay   = $_POST['denngay'];
+	$giaovien2 = implode(",", $_POST['giaovien']);
+	$where     = "";
+	if ($_POST['giaovien'][0] == 0) {
+		$where .= " and 0 = 0";
+	} else {
+		$where .= " and Tgr6tbj_JYR4mv in (".$giaovien2.")";
+		$where1 .= " and Th2egcp_1WkJfp in (".$giaovien2.")";
+		$where2 .= " and Tv8i5eo_uHZy8B in (".$giaovien2.")";// chú ý phần union chỗ as tên
+	}
+	$baocao2 = select_list($conn, "select Tcjq98u_kHo4Ag as lop,Tgr6tbj_eEZUsy as lop1 ,Tgr6tbj_JYR4mv as giaovien,Tgr6tbj_gkIqnl as giobdday,Tgr6tbj_vljBz5 as gioktday,Tgr6tbj_ytC1E9 as ngayday,Tgr6tbj_7UaPOk as khaigiang from tgr6tbj left join tcjq98u on tcjq98u_id = Tgr6tbj_eEZUsy where Tgr6tbj_ytC1E9 between '".$tungay."' and '".$denngay."'".$where." UNION select Tjxzrka_siRo6k as lop,Th2egcp_ohVzBK as lop1,Th2egcp_1WkJfp as giaovien,Th2egcp_yfTvoW as gioktday,Th2egcp_LJaGIr as giobdday,Th2egcp_Rz1Z9s as ngayday,Th2egcp_vYipaH from th2egcp left join tjxzrka on Tjxzrka_id = Th2egcp_ohVzBK where Th2egcp_Rz1Z9s between '".$tungay."' and '".$denngay."'".$where1." UNION select Tcjq98u_kHo4Ag as lop,Tv8i5eo_zCHL0S as lop1,Tv8i5eo_uHZy8B as giaovien,Tv8i5eo_hsyCn3 as giobdday,Tv8i5eo_SdT9Vf as gioktday,Tv8i5eo_k5KVPW as ngayday,Tv8i5eo_KDZB1W as khaigiang from tv8i5eo left join tcjq98u on Tcjq98u_id = Tv8i5eo_zCHL0S where Tv8i5eo_k5KVPW between '".$tungay."' and '".$denngay."'".$where2);
+	?>
+	<link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
+	    <script src="plugins/datatables/jquery.dataTables.js"></script>
+	    <script src="plugins/datatables/dataTables.bootstrap.js"></script>
+	    <h3 style="font-weight: bold;">+ Bảng chấm công</h3>
+	    <table id="bang1" class="table table-bordered table-striped table-hover text-center">
+	        <thead>
+	        <tr>
+	            <th>Trường</th>
+	            <th>Ngày dạy</th>
+	            <th>Giờ dạy</th>
+	            <th>Lớp</th>
+	            <th>Khai giảng</th>
+	            <th>Tên người dạy</th>
+	        </tr>
+	        </thead>
+
+
+	<?php foreach ($baocao2 as $value) {
+		$truong = select_info($conn, "select * from tcjq98u left join tv9ez27 on Tv9ez27_id = Tcjq98u_8G3wY9 where Tcjq98u_id = ".$value['lop1']);
+		if (!empty($value['giaovien'])) {
+			$tengv = select_info($conn, "select * from tyq36e8 where Tyq36e8_id = ".$value['giaovien']);
+
+		} else {
+			$tengv = select_info($conn, "select * from tyq36e8");
+		}
+
+		$gio1 = strtotime($value['giobdday']);
+		$gio2 = strtotime($value['gioktday']);
+		$gio3 = $gio1-$gio2;
+		$gio4 = date("H-i-s", $gio3);
+		?>
+
+		            <tr>
+		                <td><?=$truong['Tv9ez27_XLJ9tg']?></td>
+		                <td><?=$value['ngayday']?></td>
+		                <td><?=$gio4?></td>
+		                <td><?=$value['lop']?></td>
+		                <td><?=$value['khaigiang']?></td>
+		                <td><?=$tengv['Tyq36e8_QZ1War']?></td>
+		            </tr>
+		<?php }?>
+	</table>
+
+	    <script>
+	        $(function () {
+	            $('#bang1').DataTable();
+	        });
+	    </script>
+	<?php
+	exit;
+}
+?>
+<div class="box">
+    <div class="box-header with-border">
+        <h3 class="box-title">Báo cáo chấm công</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        </div>  <!-- /.box-tools -->
+    </div> <!-- /.box-header -->
+    <div class="box-body">
+        <div class="col-sm-3">
+            <label>Từ ngày:</label>
+            <input type="date" name="tungay" id="tungay" class="form-control" required>
+        </div>
+        <div class="col-md-3">
+            <label>Đến ngày:</label>
+            <input type="date" name="denngay" id="denngay" class="form-control" required>
+        </div>
+        <div class="col-md-3">
+            <label>Giáo viên:</label>
+            <select multiple class="form-control chosen-select" id="giaovien" name="giaovien">
+                <option value="0" selected="selected">Tất cả</option>
+<?php
+$chongiaovien = select_list($conn, "select * from tyq36e8");
+foreach ($chongiaovien as $val) {
+	?>
+	                    <option value="<?=$val['Tyq36e8_id']?>"><?=$val['Tyq36e8_QZ1War']?></option>
+	<?php }?>
+</select>
+        </div>
+        <div class="col-md-3" style="margin-top: 21px;">
+            <button class="btn btn-success" onclick="xem()">Xem</button>
+        </div>
+    </div> <!-- /.box-body -->
+    <div class="box-footer">
+        <div id="show"></div>
+    </div><!-- /.box-body -->
+</div><!-- /.box -->
+
+
+<script>
+    function xem() {
+        var tungay = $("#tungay").val();
+        var denngay = $("#denngay").val();
+        var giaovien = $("#giaovien").val();
+        $.ajax({
+            url: "?xem",
+            dataType: "text",
+            data: {tungay: tungay, denngay: denngay, giaovien: giaovien},
+            type: "POST",
+            success: function (data) {
+                $("#show").html(data);
+            },
+            error: function () {
+            }
+        });
+
+    }
+</script>

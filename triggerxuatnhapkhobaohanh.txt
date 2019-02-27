@@ -1,0 +1,23 @@
+BEGIN
+DECLARE tongnhap INT;
+DECLARE tongxuat INT;
+DECLARE kiemtra INT;
+declare khonhap int;
+declare tongbt int;
+declare kho int;
+
+set khonhap = (select To8uck3_1EOCJ7 from to8uck3 where To8uck3_id = new.Tcaj3bq_MaHI3Y);
+SET tongnhap = (SELECT SUM(Tcaj3bq_fxr3cX) from tcaj3bq inner join to8uck3 on To8uck3_id = Tcaj3bq_MaHI3Y WHERE Tcaj3bq_0of9qG = new.Tcaj3bq_0of9qG and To8uck3_1EOCJ7 = khonhap);
+SET tongxuat = (SELECT SUM(Tpwbtg1_gKROH6) from tpwbtg1 inner join t8qwcbe on T8qwcbe_id = Tpwbtg1_vtnJUQ WHERE Tpwbtg1_tUIuv7 = NEW.Tcaj3bq_0of9qG and T8qwcbe_PX9QG7 = khonhap );
+SET kiemtra = (SELECT COUNT(*) FROM tmnvc7j inner join to8uck3 on Tmnvc7j_4FJjy7 = To8uck3_1EOCJ7 WHERE  Tmnvc7j_LGJQzY = NEW.Tcaj3bq_0of9qG and Tmnvc7j_4FJjy7 = khonhap) ;
+
+IF(tongxuat is null) THEN 
+SET tongxuat=0;
+END IF;
+IF(kiemtra > 0 || kiemtra != 0 ) THEN 
+set tongbt = tongnhap - tongxuat;
+UPDATE tmnvc7j SET Tmnvc7j_BD85AH=tongbt WHERE Tmnvc7j_LGJQzY=NEW.Tcaj3bq_0of9qG and Tmnvc7j_4FJjy7 = khonhap; 
+ELSEIF(kiemtra = 0) then
+INSERT INTO tmnvc7j(Tmnvc7j_LGJQzY,Tmnvc7j_BD85AH,Tmnvc7j_owner,Viewper,Editper,Tmnvc7j_4FJjy7) VALUES (NEW.Tcaj3bq_0of9qG,tongnhap,NEW.Tcaj3bq_owner,NEW.Viewper,New.Editper,khonhap);
+END IF;
+END

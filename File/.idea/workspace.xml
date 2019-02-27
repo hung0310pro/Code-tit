@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="885335bc-a656-4a63-9ce1-f3b37a32a3be" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="File" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>slGiaoVien</find>
+      <find>btnXacNhan</find>
+      <find>idtkb</find>
+      <find>tc5ba14</find>
+      <find>$ngayloop1</find>
+      <find>T9hk7tp_mANd0P</find>
+      <find>T9hk7tp_Z4ytWb</find>
+      <find>tinhngaykt1()</find>
+      <find>Giao diện</find>
+      <find>Chi nhánh</find>
+      <find>getnextday</find>
+      <find>$arrngay</find>
+      <find>$key</find>
+      <find>$result</find>
+      <find>$rowngay</find>
+      <find>tenlop</find>
+      <find>92</find>
+      <find>F4A460</find>
+      <find>Quo</find>
+      <find>Email</find>
+      <find>Tell</find>
+      <find>$style</find>
+      <find>$e &lt; 4</find>
+      <find>$e &lt; 5</find>
+      <find>NATACHI</find>
+      <find>Số</find>
+      <find>Tel</find>
+      <find>Học phí tháng</find>
+      <find>$hocphithang</find>
+      <find>Tcyxsea_id =</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>height: 10px</replace>
+      <replace>T16encw_j0AwcJ</replace>
+      <replace>$khachhang['T1csefx_a5HDW3']</replace>
+      <replace>$khachhang['Trh76as_id']</replace>
+      <replace>Ngày hết hạn</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/Tcw1onb/view/tcw1onb/tcw1onb/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/T79uerx/view/t79uerx/t79uerx/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/T92hkn6/view/t92hkn6/t92hkn6/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/Tlks3fb/view/tlks3fb/tlks3fb/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/T4tc5lr/view/t4tc5lr/t4tc5lr/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/l0pdvi/Tz3j7yo/view/tz3j7yo/tz3j7yo/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/4gan8h/Tl8rfjw/view/tl8rfjw/tl8rfjw/index.phtml" />
+        <option value="&lt;10c96f4c-f197-4a07-9e3f-fce5d912376e&gt;/module/gr7kpf/Trivo2b/view/trivo2b/trivo2b/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/T41ba7d/view/t41ba7d/t41ba7d/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/Tsue5il/view/tsue5il/tsue5il/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/Tplm9dq/view/tplm9dq/tplm9dq/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/Te1k3ul/view/te1k3ul/te1k3ul/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/T2h8ysc/view/t2h8ysc/t2h8ysc/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/u8wz6d/Tkixz97/view/tkixz97/tkixz97/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/u8wz6d/Toms6tl/view/toms6tl/toms6tl/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/u8wz6d/T6k32rq/view/t6k32rq/t6k32rq/index.phtml" />
+        <option value="&lt;10c96f4c-f197-4a07-9e3f-fce5d912376e&gt;/module/5z9nh3/Tbyvq8g/view/tbyvq8g/tbyvq8g/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/T49ue5d/view/t49ue5d/t49ue5d/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/Tj91ibh/view/tj91ibh/tj91ibh/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/Tmpy3el/view/tmpy3el/tmpy3el/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/Tthkm9x/view/tthkm9x/tthkm9x/index.phtml" />
+        <option value="&lt;10c96f4c-f197-4a07-9e3f-fce5d912376e&gt;/module/gr7kpf/Tw6lq1t/view/tw6lq1t/tw6lq1t/index.phtml" />
+        <option value="&lt;10c96f4c-f197-4a07-9e3f-fce5d912376e&gt;/module/gr7kpf/T3w64vb/view/t3w64vb/t3w64vb/index.phtml" />
+        <option value="&lt;10c96f4c-f197-4a07-9e3f-fce5d912376e&gt;/module/gr7kpf/Tpflme1/view/tpflme1/tpflme1/index.phtml" />
+        <option value="&lt;10c96f4c-f197-4a07-9e3f-fce5d912376e&gt;/module/gr7kpf/Tq5ctrs/view/tq5ctrs/tq5ctrs/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/Tpslzh5/view/tpslzh5/tpslzh5/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/l0pdvi/Tohizqv/view/tohizqv/tohizqv/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/l0pdvi/Tvnsfpw/view/tvnsfpw/tvnsfpw/index.phtml" />
+        <option value="&lt;10c96f4c-f197-4a07-9e3f-fce5d912376e&gt;/module/lx5v3m/Tib8uyp/view/tib8uyp/tib8uyp/index.phtml" />
+        <option value="&lt;10c96f4c-f197-4a07-9e3f-fce5d912376e&gt;/module/gr7kpf/Tywcnq6/view/tywcnq6/tywcnq6/index.phtml" />
+        <option value="&lt;10c96f4c-f197-4a07-9e3f-fce5d912376e&gt;/module/gr7kpf/Tyzv28o/view/tyzv28o/tyzv28o/index.phtml" />
+        <option value="&lt;10c96f4c-f197-4a07-9e3f-fce5d912376e&gt;/module/gr7kpf/T1b4a5q/view/t1b4a5q/t1b4a5q/index.phtml" />
+        <option value="&lt;d348fe12-c7d2-4e43-a114-b15825f21da0&gt;/module/1hgx76/Tb7ldz2/view/tb7ldz2/tb7ldz2/index.phtml" />
+        <option value="&lt;d348fe12-c7d2-4e43-a114-b15825f21da0&gt;/module/1hgx76/Tvnsfpw/view/tvnsfpw/tvnsfpw/index.phtml" />
+        <option value="&lt;d348fe12-c7d2-4e43-a114-b15825f21da0&gt;/module/1hgx76/Ty17noh/view/ty17noh/ty17noh/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/Tah29iy/view/tah29iy/tah29iy/index.phtml" />
+        <option value="&lt;d348fe12-c7d2-4e43-a114-b15825f21da0&gt;/module/1hgx76/Tz3j7yo/view/tz3j7yo/tz3j7yo/index.phtml" />
+        <option value="&lt;d348fe12-c7d2-4e43-a114-b15825f21da0&gt;/module/1hgx76/Tohizqv/view/tohizqv/tohizqv/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/Ti9lte7/view/ti9lte7/ti9lte7/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/Trmtvhx/view/trmtvhx/trmtvhx/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/T82jvxh/view/t82jvxh/t82jvxh/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/Tf7kyzx/view/tf7kyzx/tf7kyzx/index.phtml" />
+        <option value="&lt;10c96f4c-f197-4a07-9e3f-fce5d912376e&gt;/module/gr7kpf/T3hcmu9/view/t3hcmu9/t3hcmu9/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/public_html/hoangnam/codebandau.php" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/bti71j/T29xev6/view/t29xev6/t29xev6/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/wqp68m/Tlpvcmo/view/tlpvcmo/tlpvcmo/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/Tik1zy9/view/tik1zy9/tik1zy9/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/go6ixs/T1uqhyt/view/t1uqhyt/t1uqhyt/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/g6ftu8/Ttd8p9e/view/ttd8p9e/ttd8p9e/index.phtml" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/public_html/hoangnam/excelbaogia.php" />
+        <option value="&lt;feaad9c2-ade8-4e08-ab74-9a37da6bf303&gt;/module/u8wz6d/Tewgh6r/view/tewgh6r/tewgh6r/index.phtml" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="54" />
+    <option name="y" value="15" />
+    <option name="width" value="1276" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/Congty/File/tit.php-tmp&#10;host&#9;null&#9;null&#10;re&#9;ACTION&#9;ActivateRemoteHostToolWindow&#10;remote&#9;ACTION&#9;RemoteServersViewToolbar&#10;d&#9;ACTION&#9;ActivateDatabaseToolWindow&#10;remote &#9;ACTION&#9;WebDeployment.BrowseServers&#10;remote host&#9;ACTION&#9;WebDeployment.BrowseServers" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tit.php" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="885335bc-a656-4a63-9ce1-f3b37a32a3be" name="Default" comment="" />
+      <created>1531101985735</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1531101985735</updated>
+      <workItem from="1531101987207" duration="165000" />
+      <workItem from="1534209920373" duration="11019000" />
+      <workItem from="1534301670605" duration="48000" />
+      <workItem from="1534301867215" duration="159000" />
+      <workItem from="1534321018647" duration="4268000" />
+      <workItem from="1534499073362" duration="2836000" />
+      <workItem from="1534553574096" duration="10791000" />
+      <workItem from="1534727140173" duration="7667000" />
+      <workItem from="1534746267101" duration="31000" />
+      <workItem from="1534755173797" duration="6911000" />
+      <workItem from="1534815690207" duration="3195000" />
+      <workItem from="1534833559423" duration="13110000" />
+      <workItem from="1534866100149" duration="13000" />
+      <workItem from="1534903650080" duration="28629000" />
+      <workItem from="1534986303875" duration="17592000" />
+      <workItem from="1535075545392" duration="27606000" />
+      <workItem from="1535159355399" duration="31047000" />
+      <workItem from="1535331924164" duration="9830000" />
+      <workItem from="1535354388129" duration="40000" />
+      <workItem from="1535354460867" duration="598000" />
+      <workItem from="1535355093074" duration="189000" />
+      <workItem from="1535355313518" duration="88000" />
+      <workItem from="1535355432364" duration="54000" />
+      <workItem from="1535355514677" duration="10184000" />
+      <workItem from="1535438125943" duration="29000" />
+      <workItem from="1535438373491" duration="13980000" />
+      <workItem from="1535505340613" duration="10415000" />
+      <workItem from="1535592790170" duration="15664000" />
+      <workItem from="1535677264747" duration="27454000" />
+      <workItem from="1535762672056" duration="13548000" />
+      <workItem from="1536022820447" duration="801000" />
+      <workItem from="1536023650521" duration="28853000" />
+      <workItem from="1536114802057" duration="18072000" />
+      <workItem from="1536196380126" duration="15032000" />
+      <workItem from="1536282768094" duration="12220000" />
+      <workItem from="1536299041401" duration="16634000" />
+      <workItem from="1536367775948" duration="3435000" />
+      <workItem from="1536627897023" duration="23467000" />
+      <workItem from="1536714687247" duration="29648000" />
+      <workItem from="1536800384788" duration="17537000" />
+      <workItem from="1536887414243" duration="20115000" />
+      <workItem from="1536974588918" duration="7558000" />
+      <workItem from="1537146024690" duration="62000" />
+      <workItem from="1537146239215" duration="13226000" />
+      <workItem from="1537163226931" duration="7964000" />
+      <workItem from="1537232538867" duration="21637000" />
+      <workItem from="1537319703033" duration="1025000" />
+      <workItem from="1537322084522" duration="24802000" />
+      <workItem from="1537405827739" duration="16371000" />
+      <workItem from="1537428179335" duration="364000" />
+      <workItem from="1537428560643" duration="9773000" />
+      <workItem from="1537495092153" duration="22833000" />
+      <workItem from="1537579737323" duration="8446000" />
+      <workItem from="1537750607135" duration="25562000" />
+      <workItem from="1537838121670" duration="26144000" />
+      <workItem from="1537924336736" duration="23202000" />
+      <workItem from="1538010915038" duration="25416000" />
+      <workItem from="1538356014191" duration="26000" />
+      <workItem from="1538356224820" duration="21987000" />
+      <workItem from="1538442969063" duration="17225000" />
+      <workItem from="1538530054071" duration="18935000" />
+      <workItem from="1538614813221" duration="24056000" />
+      <workItem from="1538700651751" duration="27924000" />
+      <workItem from="1538786904235" duration="10756000" />
+      <workItem from="1538960150647" duration="21526000" />
+      <workItem from="1539046489103" duration="2881000" />
+      <workItem from="1539050309530" duration="21060000" />
+      <workItem from="1539133824946" duration="21488000" />
+      <workItem from="1539307011053" duration="2355000" />
+      <workItem from="1539309406630" duration="24871000" />
+      <workItem from="1540777721213" duration="27000" />
+      <workItem from="1540777770202" duration="18574000" />
+      <workItem from="1540865302009" duration="19456000" />
+      <workItem from="1540951898294" duration="15523000" />
+      <workItem from="1540973105568" duration="7683000" />
+      <workItem from="1541038323504" duration="13067000" />
+      <workItem from="1541060776080" duration="679000" />
+      <workItem from="1541124965088" duration="11154000" />
+      <workItem from="1541386087460" duration="25401000" />
+      <workItem from="1541471528519" duration="26962000" />
+      <workItem from="1541555638263" duration="29699000" />
+      <workItem from="1541643480501" duration="23657000" />
+      <workItem from="1541729975963" duration="16919000" />
+      <workItem from="1541989021574" duration="18726000" />
+      <workItem from="1542075188408" duration="18867000" />
+      <workItem from="1542161928472" duration="23407000" />
+      <workItem from="1542248009627" duration="13976000" />
+      <workItem from="1542594036614" duration="26545000" />
+      <workItem from="1542680339545" duration="21534000" />
+      <workItem from="1542766708806" duration="25314000" />
+      <workItem from="1542853666640" duration="25133000" />
+      <workItem from="1542939573698" duration="24965000" />
+      <workItem from="1543025094372" duration="10403000" />
+      <workItem from="1543197545814" duration="5038000" />
+      <workItem from="1543214585961" duration="3821000" />
+      <workItem from="1543224388466" duration="1705000" />
+      <workItem from="1543285654536" duration="14548000" />
+      <workItem from="1543370538836" duration="15385000" />
+      <workItem from="1543456860740" duration="30280000" />
+      <workItem from="1543543078849" duration="28311000" />
+      <workItem from="1543629435965" duration="4034000" />
+      <workItem from="1543633549252" duration="238000" />
+      <workItem from="1543633837109" duration="115000" />
+      <workItem from="1543633995803" duration="5196000" />
+      <workItem from="1543802491978" duration="24122000" />
+      <workItem from="1543889397450" duration="27486000" />
+      <workItem from="1543921753011" duration="56000" />
+      <workItem from="1543975540265" duration="27924000" />
+      <workItem from="1544061924628" duration="31878000" />
+      <workItem from="1544114230957" duration="150000" />
+      <workItem from="1544148238127" duration="27257000" />
+      <workItem from="1544235587974" duration="9880000" />
+      <workItem from="1544408252166" duration="28008000" />
+      <workItem from="1544494898178" duration="26354000" />
+      <workItem from="1544580742890" duration="30772000" />
+      <workItem from="1544666705268" duration="24530000" />
+      <workItem from="1544753121248" duration="13612000" />
+      <workItem from="1544841474439" duration="103000" />
+      <workItem from="1544841615363" duration="1225000" />
+      <workItem from="1544895061450" duration="149000" />
+      <workItem from="1545029628190" duration="11179000" />
+      <workItem from="1545099374348" duration="30569000" />
+      <workItem from="1545185022246" duration="2381000" />
+      <workItem from="1545190184433" duration="19776000" />
+      <workItem from="1545271579329" duration="30650000" />
+      <workItem from="1545358242485" duration="28886000" />
+      <workItem from="1545444181120" duration="9743000" />
+      <workItem from="1545617425353" duration="12060000" />
+      <workItem from="1545638382972" duration="10192000" />
+      <workItem from="1545703449664" duration="24388000" />
+      <workItem from="1545738991532" duration="6864000" />
+      <workItem from="1545789862973" duration="34045000" />
+      <workItem from="1545876410897" duration="8843000" />
+      <workItem from="1545892654953" duration="46000" />
+      <workItem from="1545892703302" duration="19566000" />
+      <workItem from="1545963664140" duration="11000" />
+      <workItem from="1545963722335" duration="28328000" />
+      <workItem from="1546394349916" duration="26199000" />
+      <workItem from="1546481899921" duration="16514000" />
+      <workItem from="1546568094836" duration="3410000" />
+      <workItem from="1546571680790" duration="24435000" />
+      <workItem from="1546841546160" duration="14853000" />
+      <workItem from="1546860602724" duration="246000" />
+      <workItem from="1546916100707" duration="21025000" />
+      <workItem from="1547003582291" duration="24134000" />
+      <workItem from="1547085742854" duration="32093000" />
+      <workItem from="1547187549974" duration="18342000" />
+      <workItem from="1547258941796" duration="10205000" />
+      <workItem from="1547431660196" duration="25070000" />
+      <workItem from="1547517894920" duration="23832000" />
+      <workItem from="1547604572278" duration="573000" />
+      <workItem from="1547605185205" duration="27665000" />
+      <workItem from="1547691347897" duration="22807000" />
+      <workItem from="1547777047207" duration="23981000" />
+      <workItem from="1548122485395" duration="118000" />
+      <workItem from="1548122929205" duration="378000" />
+      <workItem from="1548123720759" duration="12517000" />
+      <workItem from="1548140604067" duration="17929000" />
+      <workItem from="1548208908625" duration="25887000" />
+      <workItem from="1548295934072" duration="24160000" />
+      <workItem from="1548398279762" duration="1585000" />
+      <workItem from="1548641316867" duration="3111000" />
+      <workItem from="1548644872485" duration="7245000" />
+      <workItem from="1548727395449" duration="10120000" />
+      <workItem from="1548813723151" duration="21146000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2419404000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" side_tool="true" weight="0.11420205" />
+      <window_info id="Favorites" order="1" side_tool="true" weight="0.32980332" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329429" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3287879" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.328594" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3237519" />
+      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.3235725" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="13" weight="0.3287879" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info active="true" anchor="right" id="Remote Host" order="3" sideWeight="0.4969697" visible="true" weight="0.17057101" />
+      <window_info anchor="right" id="Database" order="4" sideWeight="0.5030303" weight="0.15355521" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="22" column="3" lean-forward="true" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Danh mục test.url" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/core-scripting.rnc" />
+    <entry file="file://$USER_HOME$/Desktop/trigger.php" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/tables.rnc" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/common.rnc" />
+    <entry file="file://D:/page_api/bai1.js" />
+    <entry file="file://$USER_HOME$/Downloads/0mz45o.tsgun46(handsontable ngon).php" />
+    <entry file="file://$PROJECT_DIR$/tit.php-tmp" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/block.rnc" />
+    <entry file="file://$USER_HOME$/Downloads/tit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="25" column="29" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../handson.php" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/web-forms2.rnc" />
+    <entry file="file://$USER_HOME$/Downloads/0mz45o.tsgun46(handsontable ngon) (1).php" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/web-forms.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="37" selection-start-line="33" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../code/codelaytrangthai1bangkhac.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="571">
+          <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#5#0#PHP" expanded="true" />
+            <element signature="e#1364#1367#0#PHP" expanded="true" />
+            <element signature="e#2477#2480#0#PHP" expanded="true" />
+            <element signature="e#2781#2784#0#PHP" expanded="true" />
+            <element signature="e#2836#2839#0#PHP" expanded="true" />
+            <element signature="e#2951#2954#0#PHP" expanded="true" />
+            <element signature="e#3002#3005#0#PHP" expanded="true" />
+            <element signature="e#3093#3096#0#PHP" expanded="true" />
+            <element signature="e#3133#3136#0#PHP" expanded="true" />
+            <element signature="e#3202#3205#0#PHP" expanded="true" />
+            <element signature="e#4183#4186#0#PHP" expanded="true" />
+            <element signature="e#4219#4222#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/superglobals/_superglobals.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/phieuindepvl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="19" selection-start-line="19" selection-end-line="35" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#5#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/original-tvfwgn.tgiaoviec(diy drawfromandlist, rateit jquery plugin).php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="1579" column="65" lean-forward="true" selection-start-line="1579" selection-start-column="48" selection-end-line="1579" selection-end-column="65" />
+          <folding>
+            <element signature="e#23750#23753#0#PHP" expanded="true" />
+            <element signature="e#23848#23851#0#PHP" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#td#6;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#td#6;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#td#6;n#tr#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="81" column="9" lean-forward="true" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="50" />
+          <folding>
+            <element signature="e#6#751#0#PHP" expanded="true" />
+            <element signature="n#apiAuth#0;n#!!top" expanded="true" />
+            <element signature="n#getsystemuser#0;n#!!top" expanded="true" />
+            <element signature="n#select_info#0;n#!!top" expanded="true" />
+            <element signature="n#uploadfile#0;n#!!top" expanded="true" />
+            <element signature="n#drawtablejs#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/69.url" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

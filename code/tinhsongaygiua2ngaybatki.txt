@@ -1,0 +1,4 @@
+   $first_date = strtotime($ngaybatdau);
+    $second_date = strtotime($ngayketthuc);
+    $datediff = abs($first_date - $second_date);
+    $solop_sothang =ceil((floor($datediff / (60 * 60 * 24)))/7);

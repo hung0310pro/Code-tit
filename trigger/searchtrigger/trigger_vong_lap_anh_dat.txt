@@ -1,0 +1,16 @@
+BEGIN
+
+declare sobuoi int;
+declare v1 int default 1;
+
+set sobuoi = ifnull(new.Tvhe3u5_hdCKvL,0);
+
+myloop: WHILE (v1 <= sobuoi) DO
+    insert into tyhguxq (Tyhguxq_WjdFRr,Tyhguxq_WZLp6e,Tyhguxq_owner,Viewper,Editper) VALUES (NEW.Tvhe3u5_id,v1,new.Tvhe3u5_owner,NEW.Viewper,New.Editper);
+    SET v1 = v1 + 1;
+  if(v1 >= 1000) then
+  LEAVE myloop;
+ end if; 
+END WHILE myloop;
+
+END

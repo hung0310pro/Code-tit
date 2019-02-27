@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="10c96f4c-f197-4a07-9e3f-fce5d912376e" name="dev" url="http://10.0.0.238">
+        <fileTransfer host="10.0.0.238" port="22" rootFolder="/opt/lampp/htdocs" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="feaad9c2-ade8-4e08-ab74-9a37da6bf303" name="dev2" url="http://10.0.0.78">
+        <fileTransfer host="10.0.0.78" port="22" rootFolder="/opt/lampp/htdocs/dev2" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="e2726a72-41b5-4e3e-b22d-5d5a7dc11ea2" name="10.0.0.55" url="http://10.0.0.55">
+        <fileTransfer host="10.0.0.55" port="22" rootFolder="/opt/lampp/htdocs/vietuc" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="ca4da6b3-b3fc-4b1a-a255-ce684b133279" name="nguyenthanhha" url="http://27.72.104.68">
+        <fileTransfer host="27.72.104.68" port="22" rootFolder="/opt/lampp/htdocs" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="8bbfd2d0-2465-4bcd-bbe7-a0bfd2584ba3" name="enta_edu" url="http://27.72.104.68">
+        <fileTransfer host="27.72.104.68" port="22" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="aad24307-4d29-4caa-a725-f41ac7a9e324" name="vietduc" url="http://vietduc.faceworks.vn">
+        <fileTransfer host="vietduc.faceworks.vn" port="22" rootFolder="/opt/lampp/htdocs" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="d348fe12-c7d2-4e43-a114-b15825f21da0" name="App 30" url="http://app30.faceworks.vn">
+        <fileTransfer host="app30.faceworks.vn" port="223" rootFolder="/opt/lampp/htdocs/app30" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="223" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="03a06ac9-757d-4471-95a1-bc40dd4555c3" name="duongthanh" url="http://quanly.waterco.com.vn">
+        <fileTransfer host="quanly.waterco.com.vn" port="223" rootFolder="/opt/lampp/htdocs" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="223" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

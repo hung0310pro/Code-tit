@@ -1,0 +1,291 @@
+<?php
+// code  v-wings,tukdjnb
+require_once "tit.php";
+$conn = new titAuth($servername, $username, $password, $dbname);
+if (isset($_GET['checkmakh'])) { // đây là phần check, trả về json
+    $this->layout('Student/layout2');
+    $makh = $_POST['makh'];
+    if (!empty($makh)) {
+        $checkmkh = select_info($conn, "select * from t8i7smn where T8i7smn_ZwjayB = '" . $makh . "'");
+    }
+    if ($checkmkh != '') {
+        echo json_encode(1);
+    } else {
+        echo json_encode(0);
+    }
+    exit;
+}
+?>
+<?php
+/*if (isset($_GET['checksdt'])) {
+    $this->layout('Student/layout2');
+
+    $sdt = $_POST['sdt'];
+    if ($sdt != '') {
+        $sql = "select * from t8i7smn LEFT JOIN tyj7o9k on T8i7smn_id = Tyj7o9k_CIxaNf WHERE Tyj7o9k_u2O5HC = " . $sdt . " or T8i7smn_moXAEY =" . $sdt;
+        $data = select_info($conn, $sql);
+
+        if ($data != '') {
+            echo json_encode(1);
+        } else {
+            echo json_encode(0);
+        }
+    }
+    exit;
+}*/
+if ($_POST != null && isset($_GET['show'])) {
+    $this->layout('Studen t/layout2');
+
+    $data = makedatanl($conn, 't8i7smn', $_POST);
+
+    insertdb($conn, 't8i7smn', $data);
+    $id = lastinsertid($conn);
+
+    if ($_POST['T8i7smn_1FY7fp'] == 98) {
+        $gioitinh = 78;
+    } elseif ($_POST['T8i7smn_1FY7fp'] == 99) {
+        $gioitinh = 79;
+    } else {
+        $gioitinh = 0;
+    }
+
+    //if ($_POST['nguoihoc'] == 2) {
+    $data1['Tyj7o9k_7T60hy'] = $data['T8i7smn_QZyClh'];
+    $data1['Tyj7o9k_u2O5HC'] = $data['T8i7smn_moXAEY'];
+    $data1['Tyj7o9k_Tn14gX'] = $data['T8i7smn_1EyAT9'];
+    $data1['Tyj7o9k_lLUB7c'] = $data['T8i7smn_qTeSNV'];
+    $data1['Tyj7o9k_u2O5HC'] = $_POST['T8i7smn_moXAEY'];
+    $data1['Tyj7o9k_tX5ORo'] = $gioitinh;
+    $data1['Tyj7o9k_CIxaNf'] = lastinsertid($conn);
+    insertdb($conn, 'tyj7o9k', $data1);
+
+    //header("Location: /t1obv9d/?hs=" . lastinsertid($conn)); /* Redirect browser
+    //}
+    $id2 = lastinsertid($conn);
+    ?>
+    <div>
+        <a href="#" onclick="lichsutuvan(<?= $id ?>)" class="btn btn-lg btn-danger" data-dismiss="modal"><i
+                    class="fa fa-plus-circle"></i> Tư vấn</a>
+        <a href="http://dev.faceworks.vn:8833/tbtq763/add?Tbtq763_9nUTEx=<?= $id ?>&Tbtq763_O4VKa8=5"
+           class="btn btn-lg btn-success" style="margin: 0px 15px"><i class="fa fa-bullseye"></i> Hẹn test</a>
+        <?php if ($_POST['nguoihoc'] == 2) { ?>
+            <a href="t1obv9d?id=<?= $id2 ?>" class="btn btn-lg btn-info"><i class="fa fa-check"></i> Đăng ký học</a>
+        <?php } elseif ($_POST['nguoihoc'] == 1) { ?>
+            <a href="t1obv9d?id2=<?= $id2 ?>" class="btn btn-lg btn-info"><i class="fa fa-check"></i> Đăng ký học</a>
+        <?php } ?>
+
+    </div>
+    <hr>
+    <?php
+    //header("Location: /t1obv9d"); /* Redirect browser */
+    exit;
+}
+
+
+
+if (isset($_GET['tuvan'])) {
+    $this->layout('Student/layout2');
+    $id = $_POST['id'];
+
+    $lienhegannhat = date('Y-m-d H:m:s');
+
+    $insertdata = array(
+        "Tqu285m_4lID39" => $id,
+        "Tqu285m_z9bPuh" => $lienhegannhat,
+        "Tqu285m_eWvNYf" => 1,
+    );
+
+    insertdb($conn, "tqu285m", $insertdata);
+    $idtuvan = lastinsertid($conn);
+    echo json_encode($idtuvan);
+    exit;
+}
+?>
+<section class="content">
+    <script src="/js/makealert.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/plugins/rateit/scripts/jquery.rateit.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/plugins/rateit/scripts/rateit.css">
+
+
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Đăng ký học khách hàng mới</h3>
+
+            <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            </div>  <!-- /.box-tools -->
+        </div>
+        <div class="box-body">
+            <form action="" method="post" id="sbmform">
+                <div class="row">
+                    <!--<div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="T8i7smn_QZyClh">Đối tượng</label>
+                            <select name="nguoihoc" class="form-control chosen-select" id="nguoihoc">
+                                <option value="1">Phụ huynh</option>
+                                <option value="2">Người học</option>
+                            </select>
+                        </div>
+                    </div>-->
+                    <div class="col-lg-12" style="text-align: right;">
+                        <div id="lstuvan">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3" style="height: 85px;">
+                        <div class="form-group">
+                            <label for="T8i7smn_1EyAT9"> Mã khách hàng </label>
+                            <input type="text" id="T8i7smn_ZwjayB" name="T8i7smn_ZwjayB" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-3" style="height: 85px;">
+                        <div class="form-group">
+                            <label for="T8i7smn_1EyAT9"> Tên khách hàng </label>
+                            <input type="text" id="T8i7smn_1EyAT9" name="T8i7smn_1EyAT9" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-3" style="height: 85px;">
+                        <div class="form-group">
+                            <label for="T8i7smn_moXAEY"> Số điện thoại khách hàng </label>
+                            <input type="text" id="T8i7smn_moXAEY" name="T8i7smn_moXAEY" class="form-control">
+                        </div>
+                    </div>
+                    <?php
+                    $notshow = array(
+                        'T8i7smn_z5T8c2' => '1',
+                        'T8i7smn_MJDQ1c' => '1',
+                        'T8i7smn_aVJdv4' => '1',
+                        'T8i7smn_8jhZqD' => '1',
+                        'T8i7smn_ZwjayB' => 2,
+                        'T8i7smn_bxpPJO' => 3,
+                        'T8i7smn_KsOx6E' => 3,
+                        'T8i7smn_1EyAT9' => '1',
+                        'T8i7smn_moXAEY' => '1',
+                    );
+                    $option = null;
+                    drawform($conn, 't8i7smn', $option, $l = 3, $notshow);
+                    ?>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <input type="submit" name="submit" id="submitbutton" class="btn btn-primary btn-sm"
+                               value="Thêm mới">
+                    </div>
+                </div>
+            </form>
+        </div>  <!-- /.box-tools -->
+    </div>
+
+    <!---->
+    <!--script-->
+    <script src="/js/makealert.js" type="text/javascript"></script>
+    <script>
+ /*       $('#T8i7smn_moXAEY').change(function () {
+            var sdt = $('#T8i7smn_moXAEY').val();
+            $.ajax({
+                url: "tukdjnb?checksdt",
+                dataType: "json",
+                data: {sdt: sdt},
+                type: "POST",
+                success: function (data) {
+                    if (data == 1) {
+                        makeAlertright("Trùng số điện thoại", 7000);
+                        //$('#T8i7smn_moXAEY').val('');
+                        $('#T8i7smn_moXAEY').css("border", "1px solid red");
+                        $('#T8i7smn_moXAEY').focus();
+                    } else if (data == 0) {
+                        $('#T8i7smn_moXAEY').css("border", "1px solid #d2d6de");
+                    }
+                },
+                error: function () {
+                }
+            });
+
+        });*/
+
+         $('#T8i7smn_ZwjayB').change(function () { // chú ý check mã khách hàng
+            var makh = $('#T8i7smn_ZwjayB').val();
+            $.ajax({
+                url: "?checkmakh",
+                dataType: "json",
+                data: {makh: makh},
+                type: "POST",
+                success: function (data) {
+                    if (data == 1) {
+                        makeAlertright("Trùng mã khách hàng", 7000);
+                        //$('#T8i7smn_moXAEY').val('');
+                        $('#T8i7smn_ZwjayB').css("border", "1px solid red");
+                        $('#T8i7smn_ZwjayB').focus();
+                    } else if (data == 0) {
+                        $('#T8i7smn_ZwjayB').css("border", "1px solid #d2d6de");
+                    }
+                },
+                error: function () {
+                }
+            });
+
+        });
+
+        function lichsutuvan($id) {
+            var id = $id;
+            $.ajax({
+                url: "/tukdjnb?tuvan",
+                dataType: "json",
+                data: {id: id},
+                type: "POST",
+                success: function (data) {
+                    window.location.href = '/tqu285m/edit/' + data;
+                },
+                error: function () {
+                }
+            });
+
+        }
+
+        $('#sbmform').on('submit', function (e) {
+            e.preventDefault();
+            var makh = $('#T8i7smn_ZwjayB').val();
+            var ten = $('#T8i7smn_1EyAT9').val();
+            var sdt = $('#T8i7smn_moXAEY').val();
+            var a = true;
+            if (sdt == '') {
+                makeAlertright('Hãy điền số điện thoại', 3000);
+                a = false;
+            }
+            if (ten == '') {
+                makeAlertright('Hãy điền tên khách hàng', 3000);
+                a = false;
+            }
+            if (makh == '') {
+                makeAlertright('Hãy điền mã khách hàng', 3000);
+                a = false;
+            }
+            if (a == true) {
+                e.preventDefault();
+                var formData = new FormData($(this)[0]);
+                $.ajax({
+                    type: 'post',
+                    url: 'tukdjnb?show',
+                    data: formData,
+                    async: false,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        $('#lstuvan').html(data);
+
+                        makeSAlertright("Thêm thành công", 2000);
+                        //$("#catlist").load(location.href + " #catlist");
+                        //$("#noti").html(data);
+                        //window.setTimeout(function(){location.reload()},1000);
+                    }
+                }); //End Ajax
+            }
+
+        }); //End submit
+    </script>
+

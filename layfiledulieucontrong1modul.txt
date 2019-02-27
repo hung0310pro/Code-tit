@@ -1,0 +1,7 @@
+$code = 'b69y2n';  // ten cua file code vi du 71m45k
+$idhs = $_GET['id'];
+$module = 'Tzrk3h2'; // moldul minh lay du lieu , va ben trong no co file du lieu con
+
+$Id = $idhs;
+$f = __FILE__;
+$listanh = getlistfile($code, $module, $Id, $f);

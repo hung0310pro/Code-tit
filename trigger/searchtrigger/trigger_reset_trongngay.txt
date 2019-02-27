@@ -1,0 +1,27 @@
+begin
+
+declare phieubaoluu int;
+declare phieubaoluumoi int;
+declare a varchar(5);
+declare ngay_cno int;
+declare ngay int;
+
+set ngay = date_format(curdate(),'%d');
+set ngay_cno = (select Cno from cno where Modulename = 'ngay');
+if (ngay != ngay_cno) then
+    update cno set Cno = ngay where Modulename = 'ngay';
+    update cno set Cno = 0 where Modulename = 'phieubaoluu';
+end if;
+
+set phieubaoluu = (select Cno from cno where Modulename = 'phieubaoluu');
+set phieubaoluumoi = phieubaoluu +1;
+
+set a ='0';
+if(phieubaoluumoi>9) then
+set a ='';
+end if;
+
+set new.Thmkcj5_wsxVNA = concat('BL-',a,phieubaoluumoi,'-',date_format(curdate(),'%d/%m/%y'));
+update cno set Cno = phieubaoluumoi where Modulename = 'phieubaoluu';
+
+end

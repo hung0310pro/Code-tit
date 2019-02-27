@@ -1,0 +1,35 @@
+﻿- Cấu hình phần mềm quản lý bán hàng
++ Quản lý khách hàng (Tên,tuổi,địa chỉ,email,công nợ,tổng đơn hàng,thời gian mua hàng cuối cùng)
++ Quản lý danh sách sản phẩm (Tên sản phẩm,thông tin sản phẩm,mã sản phẩm,số lượng đã bán,số lượng đã mua,còn lại)
++ Quản lý danh sách đơn hàng (Mã đơn hàng,khách hàng,ngày mua hàng,ghi chú,tổng tiền,tổng đã thanh toán,còn lại)
+
++ Quản lý chi tiết đơn hàng (Mã đơn hàng,sản phẩm,số lượng,giá,tổng tiền)
+
++ Quản lý thanh toán đơn hàng (Mã đơn hàng,ngày thanh toán,số tiền)
++ Quản lý nhà cung cấp (Tên nhà cung cấp,địa chỉ,tổng đơn hàng đã nhập,tổng tiền đơn hàng,tổng tiền đã thanh toán,công nợ)
++ Quản lý nhập hàng (Mã nhập hàng,nhà cung cấp,ngày nhập,tổng số lượng sản phẩm,tổng giá đơn nhập,đã thanh toán,còn lại)
++ Quản lý chi tiết nhập hàng (Mã nhập hàng,sản phẩm,số lượng,đơn giá,tổng tiền)
++ Quản lý thanh toán nhập hàng (Mã nhập hàng,ngày thanh toán,số tiền)
+
+
+Trigger : 
+
++ tính tổng tiền của chi tiết đơn hàng = số lượng * đơn giá
++ tính tổng tiền đơn hàng = (sum tổng tiền của tất cả chi tiết đơn hàng)
++ tính số tiền đã thanh toán của đơn hàng = (sum tổng tiền của tất cả các lần thanh toán của đơn hàng)
++ Số tiền còn lại của đơn hàng = tổng tiền - đã thanh toán;
++ tính công nợ khách hàng = (sum số tiền còn lại của các đơn hàng của khách hàng)
++ thời gian mua hàng cuối cùng = (thời gian đơn hàng lần cuối của khách hàng đó)
++ tổng đơn hàng khách hàng = count số đơn hàng của khách hàng đó 
+
++ tổng tiền chi tiết nhập hàng =  (sum tổng tiền của tất cả chi tiết nhập hàng)*
++ tính số tiền đã thanh toán của nhập hàng = (sum tổng tiền của tất cả các lần thanh toán của nhập hàng)*
++ Số tiền còn lại của đơn nhập hàng = tổng tiền - đã thanh toán;
++ Tổng số lượng sản phẩm đơn nhập hàng = (count tổng số lượng sản phẩm của đơn nhập đó)
++ công nợ nhà cung cấp = (sum số tiền còn lại đơn nhập của nhà cung cấp đó)*
++ tổng đơn hàng nhà cung cấp = sum tổng đơn hàng của nhà cung cấp đó*
+
++ Số lượng sản phẩm đã bán = tổng số lượng chi tiết đơn hàng của sản phẩm đó*
++ Số lượng sản phẩm đã mua = tổng số lượng chi tiết đơn nhập hàng của sản phẩm đó*
++ còn lại = tổng slsp đã mua - tổng slsp đã bán;
+z3qra0

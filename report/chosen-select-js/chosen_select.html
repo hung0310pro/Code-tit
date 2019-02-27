@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Chosen_select</title>
+	<script type="text/javascript" src="jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="chosen.jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="chosen.min.css">
+</head>
+<body>
+	<div>
+		    	
+    <select class="chosen-select" >
+
+    	<option value="0">---</option>
+    	<option value="1">Lựa chọn 1</option>
+		<option value="2">Option2</option>
+		<option value="3">Option3</option>
+		<option value="4" disabled="disabled">Option4</option>
+		<option value="5">Option5</option>
+		<option value="6">Option6</option>
+		<option value="7">Option7</option>
+    </select>
+</div>
+<p></p>
+<p></p>
+<p></p>
+    <div>
+    
+	    <select class="chosen-select2"  multiple>
+	    	<option value="0">---</option>
+	    	<option value="1">Lựa chọn 1</option>
+			<option value="2">Option2</option>
+			<option value="3" disabled="disabled">Option3</option>
+			<option value="4">Option4</option>
+			<option value="5">Option5</option>
+			<option value="6">Option6</option>
+			<option value="7">Option7</option>
+	    </select>
+
+	    <select class="chosen-select3">
+    <optgroup label="Theropods">
+        <option>Tyrannosaurus</option>
+        <option>Velociraptor</option>
+        <option>Deinonychus</option>
+    </optgroup>
+    <optgroup label="Sauropods">
+        <option selected="selected">Diplodocus</option>
+        <option>Saltasaurus</option>
+        <option>Apatosaurus</option>
+    </optgroup>
+</select>
+</div>
+	<script>
+		$(".chosen-select").chosen({
+        inherit_select_classes: true,
+        //search_contains: true,
+        width: '20%',
+        no_results_text: "Không tìm thấy kết quả ",
+
+    });
+
+		$(".chosen-select2").chosen({
+       // search_contains: true,
+        inherit_select_classes: true,
+        width: '20%',
+        no_results_text: "Không tìm thấy kết quả :"
+    });
+
+
+		$(".chosen-select3").chosen({
+       // search_contains: true,
+        inherit_select_classes: true,
+
+        width: '20%',
+        no_results_text: "Không tìm thấy kết quả :"
+    });
+// disable_search: false,false thì là có thể search, còn nếu là true thì k thể search trong
+// cái lựa chọn bt
+ 
+// no_results_text: hiển thị khi k tìm thấy kq nào phù hợp
+
+// disable_search_threshold : 12. Nếu số tùy chọn option NHỎ hơn 12 thì nó sẽ ẩn đi cái search đi
+// còn nếu LỚN hơn 12 thì nó sẽ mở cái search đấy ra 
+
+// max_selected_options: 2, giới hạn trong cái chọn NHIỀU chỉ đc chọn 2 cái thôi.
+
+// placeholder_text_multiple viết trong chọn nhiều, gợi ý là chọn 1 ô có trong select ví dụ như là
+// placeholder_text_multiple : "Option7",
+
+// placeholder_text_single tương tự cái trên nhưng chỉ trong cái lựa chọn duy nhất  
+
+// width chọn độ rộng
+
+// rtl	nếu để là false thì nó để văn bản từ phải sang trái, còn true thì văn bản từ trái sang phải
+ 
+// max_shown_results : 2 giới hạn các option suất hiên trong select(như này dù có 10 option thì cx chỉ
+// xuất ra 2 cái thôi)
+ 
+
+// hide_results_on_select : false, thì trong cái chọn nhiều sau khi chọn thì nó vẫn giữ nguyên cái select k ẩn cai option đi như bt, còn nếu là true thì nó sẽ như bt (chọn nhiều)
+
+//case_sensitive_search : true, thì khi search nó sẽ phân biệt chữ thường, chữ hoa, còn nếu là false thì k phân biệt 
+
+//include_group_label_in_selected : false,dùng trong cái group select option nếu là false thì k có gì vẫn chọn cái selected đã chọn
+//còn nếu là true thì nó hiện hẳn luôn tên nhóm của cái tk phần tử của nhóm đó đang đc selected
+
+
+// display_selected_options : false, trong chọn nhiều khi chọn cái nào thì cái option tương ứng vs 
+// cái chọn đó sẽ bị mất đi trong ô select
+
+//  display_disabled_options dùng cho cái option nào cx đc, nếu là FALSE thì nó sẽ ấn những 
+// option đã bị disabled , còn nếu true thì nó chẳng có gì thay đổi.
+
+// single_backstroke_delete. dùng trong chọn nhiều nếu là false khi ấn nút delete thì nó sẽ làm nổi bật cái option ngoài cùng, ấn delete lần thứ 2 thì nó ms mất, còn true thì bt.
+
+//  group_search: dùng trong cái group select option nếu để là true thì khi mình ấn tên nhãn của nhóm
+//  thì nó sẽ hiện ra cả nhãn và các option của nhãn đó, còn nếu là false thì nó chỉ hiện ra cái option trong nhóm sao cho tương ứng vs cái search.
+	</script>
+</body>
+</html>

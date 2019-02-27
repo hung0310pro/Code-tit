@@ -1,0 +1,84 @@
+﻿function doingay($ngaytrongtuan)
+{
+	switch ($ngaytrongtuan) {
+		case 53:
+			$ngay = 1;
+			//thu 2
+			break;
+		case 54:
+			$ngay = 2;
+			//thu 3
+			break;
+		case 55:
+			$ngay = 3;
+			//thu 4
+			break;
+		case 56:
+			$ngay = 4;
+			//thu 5
+			break;
+		case 57:
+			$ngay = 5;
+			//thu 6
+			break;
+		case 58:
+			$ngay = 6;
+			//thu 7
+			break;
+		case 59:
+			$ngay = 0;
+			//thu cn
+			break;
+	}
+	return $ngay;
+}
+if (isset($_GET['tinhngaykt'])) {
+	$this->layout('Student/layout2');
+	$ngaybd = $_POST['ngaybd'];
+	$sobuoi = (int)$_POST['sobuoi'];
+	lay tkb cuar lop gui len
+	$dem = 0;
+	$flag = 0;
+	while ($dem <= $sobuoi) {
+		$ngayloop = getnextday($flag, $ngaybd);
+		foreach ($array as $val) {
+			if (getNumWeekday($ngayloop) == doingay($val['Tea4boi_BFMxnI'])) {
+				$dem++;
+			}
+		}
+		if ($flag >= 100000) {
+			break;
+		}
+$flag++;
+		
+	}
+
+	echo json_encode($ngayloop);
+	exit;
+}
+
+function tinhngaykt() {
+        var ngaybd = $("#Tjxzrka_RGElDT").val();
+        var sobuoi = $("#Tjxzrka_nKldo4").val();
+      var lop =  
+        if (sobuoi > 0 && sobuoi < 200) {
+            if (ngaybd != "" && sobuoi != "") {
+                $.ajax({
+                    url: "tz6glvo?tinhngaykt",
+                    dataType: "json",
+                    data: {ngaybd: ngaybd, sobuoi: sobuoi, iddata: iddata},
+                    type: "POST",
+                    success: function (data) {
+                        $("#Tjxzrka_liMTtb").val(data);
+                        makeSAlertright("Tính thành công", 2000);
+                    },
+                    error: function () {
+                    }
+                });
+            } else {
+                makeAlertright("Bạn cần nhập đủ ngày bắt đầu và số buổi", 2000);
+            }
+        } else {
+            makeAlertright("Số buổi phải lớn hơn 0 và nhỏ hơn 200", 2000);
+        }
+    }

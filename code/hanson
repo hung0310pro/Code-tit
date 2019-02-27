@@ -1,0 +1,185 @@
+if (isset($_GET['chondoituong'])) {
+	$this->layout('Student/layout2');
+	if ($_POST['doituong'] == 1) {
+		?>
+        <div id="examplexkkhac">
+            <script>
+
+                var container = document.getElementById('examplexkkhac');
+                //var mydatalxkkhac = JSON.parse($('#datahiddenxkkhac').val());
+                var hotxkkhac =
+                    new Handsontable(container, {
+                        minSpareRows: 3,
+                        rowHeaders: true,
+                        stretchH: "all",
+                        //colHeaders: ['Mã hàng','Tên hàng', 'Đơn vị', 'Số lượng', 'Đơn giá', 'Thành tiền', '% Thuế GTGT', 'Tiền thuế GTGT'],
+                        columns: [
+                            {type: 'text',},
+                            {type: 'text',},
+                            {type: 'text',},
+                            {
+                                type: 'date',
+                                dateFormat: 'YYYY/MM/DD',
+                                correctFormat: true,
+                                //defaultDate: '01/01/1900'
+                            },
+                            {
+                                type: 'autocomplete',
+                                source: [
+									<?php
+									$listgt = select_list($conn, 'select * from  dataman WHERE Data_field = "Tyj7o9k_tX5ORo"');
+									foreach ($listgt as $gt):
+										echo '"' . $gt['Value'] . '",';
+									endforeach;
+									?>
+                                ],
+                                strict: true,
+                                allowInvalid: true
+                                //filter: true,
+
+                            },
+
+                            {type: 'text',},
+                            //{type: 'numeric', format: '0,0.00'},
+                        ],
+                        colHeaders: function (col) {
+                            var txt;
+
+                            switch (col) {
+                                case 0:
+                                    return "Tên đăng nhập";   //<button type='button' class='btn btn-info float-right tooltip-button' onclick='themmoihang()'><i class='fa fa-plus'></i></button>
+
+                                case 1:
+                                    return "Mật khẩu";
+                                    return txt;
+                                case 2:
+                                    return "Tên học sinh";
+                                    return txt;
+                                case 3:
+                                    txt = " Ngày sinh";
+                                    return txt;
+                                case 4:
+                                    txt = " Giới tính";
+                                    return txt;
+                                case 5:
+                                    txt = " Chi tiết";
+                                    return txt;
+
+                            }
+                        }
+                    });
+            </script>
+        </div>
+		<?php
+	} else {
+		?>
+        <style>
+            .alert-danger a, .alert-danger, .danger, .parsley-error {
+                color: #620f0f !important;
+                border-color: #db6a6a !important;
+                background: #ffc6c6 !important;
+            }
+        </style>
+        <div class="alert alert-danger">
+            <div class="bg-red alert-icon">
+                <i class="glyph-icon icon-times"></i>
+            </div>
+            <div class="alert-content">
+                <h4 class="alert-title">Danger message title</h4>
+                <p>Đối tượng người học không cần thêm học sinh!</p>
+            </div>
+        </div>
+        <div id="examplexkkhac">
+            <script>
+
+                var container = document.getElementById('examplexkkhac');
+                //var mydatalxkkhac = JSON.parse($('#datahiddenxkkhac').val());
+                var hotxkkhac =
+                    new Handsontable(container, {
+                        minSpareRows: 3,
+                        readOnly: true,
+                        rowHeaders: true,
+                        stretchH: "all",
+                        //colHeaders: ['Mã hàng','Tên hàng', 'Đơn vị', 'Số lượng', 'Đơn giá', 'Thành tiền', '% Thuế GTGT', 'Tiền thuế GTGT'],
+                        columns: [
+                            {type: 'text',},
+                            {type: 'text',},
+                            {type: 'text',},
+                            {
+                                type: 'date',
+                                dateFormat: 'YYYY/MM/DD',
+                                correctFormat: true,
+                                //defaultDate: '01/01/1900'
+                            },
+                            {
+                                type: 'autocomplete',
+                                source: [
+									<?php
+									$listgt = select_list($conn, 'select * from  dataman WHERE Data_field = "Tyj7o9k_tX5ORo"');
+									foreach ($listgt as $gt):
+										echo '"' . $gt['Value'] . '",';
+									endforeach;
+									?>
+                                ],
+                                strict: true,
+                                allowInvalid: true
+                                //filter: true,
+
+                            },
+
+                            {type: 'text',},
+                            //{type: 'numeric', format: '0,0.00'},
+                        ],
+                        colHeaders: function (col) {
+                            var txt;
+
+                            switch (col) {
+                                case 0:
+                                    return "Tên đăng nhập";   //<button type='button' class='btn btn-info float-right tooltip-button' onclick='themmoihang()'><i class='fa fa-plus'></i></button>
+
+                                case 1:
+                                    return "Mật khẩu";
+                                    return txt;
+                                case 2:
+                                    return "Tên học sinh";
+                                    return txt;
+                                case 3:
+                                    txt = " Ngày sinh";
+                                    return txt;
+                                case 4:
+                                    txt = " Giới tính";
+                                    return txt;
+                                case 5:
+                                    txt = " Chi tiết";
+                                    return txt;
+
+                            }
+                        }
+                    });
+            </script>
+        </div>
+		<?php
+	}
+	exit;
+}
+
+?>
+
+ <div class="col-md-8">
+                            <div class="panel">
+                                <div class="box-header with-border">
+                                    <h4 class="box-title"><i class="fa fa-calendar"></i> Chi tiết học sinh</h4>
+                                </div>
+                                <div class="panel-body">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                            <div id="chitietxuatkhac"></div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>

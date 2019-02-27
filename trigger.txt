@@ -1,0 +1,43 @@
+BEGIN
+
+Declare tongtien int;
+Declare nhanvien int;
+Declare hoahong10tr int;
+Declare hoahong8tr int;
+Declare hoahong7tr3 int;
+Declare hoahong6tr int;
+Declare hoahong5tr4 int;
+
+set nhanvien = (select count(*) from ti2t8wd where Ti2t8wd_uQmfGp = new.Tzirybe_nLkXDx);
+if(nhanvien = 0) then
+
+set hoahong10tr = (select count(*) from tzirybe left join ti2t8wd on new.Tzirybe_nLkXDx = Ti2t8wd_uQmfGp where Tzirybe_YW6hlL >= 10000000);
+set hoahong8tr = (select count(*) from tzirybe left join ti2t8wd on new.Tzirybe_nLkXDx = Ti2t8wd_uQmfGp where Tzirybe_YW6hlL < 10000000 and Tzirybe_YW6hlL >= 8100000);
+set hoahong7tr3 = (select count(*) from tzirybe left join ti2t8wd on new.Tzirybe_nLkXDx = Ti2t8wd_uQmfGp where Tzirybe_YW6hlL <  8100000 and Tzirybe_YW6hlL >= 7300000);
+set hoahong6tr = (select count(*) from tzirybe left join ti2t8wd on new.Tzirybe_nLkXDx = Ti2t8wd_uQmfGp where Tzirybe_YW6hlL < 7300000 and Tzirybe_YW6hlL >= 6000000);
+set hoahong5tr4 = (select count(*) from tzirybe left join ti2t8wd on new.Tzirybe_nLkXDx = Ti2t8wd_uQmfGp where Tzirybe_YW6hlL < 6000000 and Tzirybe_YW6hlL >= 5400000);
+
+if(hoahong10tr != 0) then
+insert into ti2t8wd(Ti2t8wd_XmoKVR,Ti2t8wd_yGqplY,Ti2t8wd_3PS7dO,Ti2t8wd_gkhVoR,Ti2t8wd_JhbQgm,Ti2t8wd_FwyvAn,Ti2t8wd_uQmfGp) values (1,0,0,0,0,150000,new.Tzirybe_nLkXDx);
+elseif(hoahong8tr != 0) then
+insert into ti2t8wd(Ti2t8wd_XmoKVR,Ti2t8wd_yGqplY,Ti2t8wd_3PS7dO,Ti2t8wd_gkhVoR,Ti2t8wd_JhbQgm,Ti2t8wd_FwyvAn,Ti2t8wd_uQmfGp) values (0,1,0,0,0,120000,new.Tzirybe_nLkXDx);
+elseif(hoahong7tr3 != 0) then
+insert into ti2t8wd(Ti2t8wd_XmoKVR,Ti2t8wd_yGqplY,Ti2t8wd_3PS7dO,Ti2t8wd_gkhVoR,Ti2t8wd_JhbQgm,Ti2t8wd_FwyvAn,Ti2t8wd_uQmfGp) values (0,0,1,0,0,80000,new.Tzirybe_nLkXDx);
+elseif(hoahong6tr != 0) then
+insert into ti2t8wd(Ti2t8wd_XmoKVR,Ti2t8wd_yGqplY,Ti2t8wd_3PS7dO,Ti2t8wd_gkhVoR,Ti2t8wd_JhbQgm,Ti2t8wd_FwyvAn,Ti2t8wd_uQmfGp) values (0,0,0,1,0,65000,new.Tzirybe_nLkXDx);
+elseif(hoahong5tr4 != 0) then
+insert into ti2t8wd(Ti2t8wd_XmoKVR,Ti2t8wd_yGqplY,Ti2t8wd_3PS7dO,Ti2t8wd_gkhVoR,Ti2t8wd_JhbQgm,Ti2t8wd_FwyvAn,Ti2t8wd_uQmfGp) values (0,0,0,0,1,60000,new.Tzirybe_nLkXDx);
+end if;
+
+elseif (nhanvien != 0) then
+set hoahong10tr = (select count(*) from tzirybe left join ti2t8wd on new.Tzirybe_nLkXDx = Ti2t8wd_uQmfGp where Tzirybe_YW6hlL >= 10000000);
+set hoahong8tr = (select count(*) from tzirybe left join ti2t8wd on new.Tzirybe_nLkXDx = Ti2t8wd_uQmfGp where Tzirybe_YW6hlL < 10000000 and Tzirybe_YW6hlL >= 8100000);
+set hoahong7tr3 = (select count(*) from tzirybe left join ti2t8wd on new.Tzirybe_nLkXDx = Ti2t8wd_uQmfGp where Tzirybe_YW6hlL <  8100000 and Tzirybe_YW6hlL >= 7300000);
+set hoahong6tr = (select count(*) from tzirybe left join ti2t8wd on new.Tzirybe_nLkXDx = Ti2t8wd_uQmfGp where Tzirybe_YW6hlL < 7300000 and Tzirybe_YW6hlL >= 6000000);
+set hoahong5tr4 = (select count(*) from tzirybe left join ti2t8wd on new.Tzirybe_nLkXDx = Ti2t8wd_uQmfGp where Tzirybe_YW6hlL < 6000000 and Tzirybe_YW6hlL >= 5400000);
+set tongtien = hoahong10tr*150000 + hoahong8tr*120000 + hoahong7tr3*80000 + hoahong6tr*65000 + hoahong5tr4*60000 ;
+update ti2t8wd set Ti2t8wd_XmoKVR = hoahong10tr,Ti2t8wd_yGqplY = hoahong8tr,Ti2t8wd_3PS7dO = hoahong7tr3,Ti2t8wd_gkhVoR = hoahong6tr,Ti2t8wd_JhbQgm = hoahong5tr4,Ti2t8wd_FwyvAn = tongtien,Ti2t8wd_id = Ti2t8wd_id where Ti2t8wd_uQmfGp = new.Tzirybe_nLkXDx;
+
+end if;
+
+END

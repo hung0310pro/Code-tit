@@ -1,0 +1,23 @@
+begin
+declare malenhsx int;
+declare malenhsxmoi int;
+declare a varchar(5);
+
+set malenhsx = (select Cno from cno where Modulename = 'malenhsx');
+set malenhsxmoi = malenhsx +1;
+
+set a = '0000';
+if(malenhsxmoi>9999)then
+set a = '';
+elseif(malenhsxmoi>999) then
+set a ='0';
+elseif(malenhsxmoi>99) then
+set a ='00';
+elseif(malenhsxmoi>9) then
+set a ='000';
+end if;
+
+set new.Tbrgfde_CGJRm2 = concat('LSX',a,malenhsxmoi);
+update cno set Cno = malenhsxmoi where Modulename = 'malenhsx';
+
+end

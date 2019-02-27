@@ -1,0 +1,525 @@
+<?php
+// anhphuoc2,j9ltbd,tmvgl7u
+require_once "tit.php";
+$conn = new titAuth($servername, $username, $password, $dbname);
+if (isset($_POST['submitform'])) {
+	$this->layout('Student/layout2');
+
+	$insertdata = array(
+		"Tzirybe_2V6X89" => $_POST['mahocsinh'],
+		"Tzirybe_SBc79u" => $_POST['sohopdong'],
+		"Tzirybe_LEZHJI" => $_POST['loaithanhtoan'],
+		"Tzirybe_nZqiCp" => $_POST['khoahoc'],
+		"Tzirybe_sZw3UB" => $_POST['tongtien'],
+		"Tzirybe_71Km3A" => $_POST['sotienphaitt'],
+		"Tzirybe_YW6hlL" => $_POST['tongphaitt'],
+		"Tzirybe_OMx6cg" => $_POST['conlai'],
+		"Tzirybe_jwgBa5" => $_POST['ngayky'],
+		"Tzirybe_9IB1Ah" => $_POST['hanthanhtoan'],
+		"Tzirybe_nLkXDx" => $_POST['nhanvienkd'],
+		"Tzirybe_7j2VLB" => $_POST['chietkhau'],
+	);
+	insertdb($conn, "tzirybe", $insertdata);
+	$lastID = lastinsertid($conn);
+	// đoạn này là ở chỗ các dòng drawformmalist mà
+	// $_POST['iddata1'] là post các giá trị trong cái ô input ẩn mà mình chèn
+	// các chuỗi json vào nó ấy.
+	$chitiethd = json_decode($_POST['iddata1'], true);
+	// cứ pr cái chitiethd là biết ấy mà (nó đang ở dạng mảng mà kiểu nhieefi mảng ấy)
+	// $chitiethd = [
+	//     0 => mang1[
+	//     ],
+	//
+	//     1 => mang2[
+	//     ],
+	//
+	//     2 => mang3[
+	//     ],
+	// ];
+	$so = count($chitiethd);
+
+	for ($i = 0; $i < $so; $i++) {
+		$insertdata = array(
+			"T4fl8ba_JjCS1s" => $lastID,
+			"T4fl8ba_1cnxov" => $chitiethd[$i]['Tjxzrka_2vjlQY'],
+			"T4fl8ba_ymNdqv" => $chitiethd[$i]['thoigian'],
+			"T4fl8ba_NrcOa4" => $chitiethd[$i]['hocphi1thang'],
+			"T4fl8ba_piOhE9" => $chitiethd[$i]['tongtien1'],
+		);
+		insertdb($conn, "t4fl8ba", $insertdata);
+	}
+
+	exit;
+}
+
+if (isset($_GET['capdo'])) {
+	$this->layout('Student/layout2');
+	$khoahoc       = $_POST['khoahoc'];
+	$capdo         = $_POST['capdo'];
+	$khoahoc1      = select_info($conn, "select * from tyzh5in left join tbxn8g3 on Tbxn8g3_id = Tyzh5in_V0HrbI where Tyzh5in_V0HrbI = $khoahoc");
+	$capdo_khoahoc = select_info($conn, "select * from tbxn8g3 where Tbxn8g3_id = $capdo and Tbxn8g3_hd7g3Q = '" .$khoahoc1['Tbxn8g3_hd7g3Q']."'");
+	// $capdo_khoahoc đang là 1 mảng
+	echo json_encode($capdo_khoahoc);// trả về 1 chuỗi
+	exit;
+}
+
+// insert là xong
+if (isset($_GET['loaithanhtoan'])) {
+	$this->layout('Student/layout2');
+	$sodong1        = $_POST['sodong1'];
+	$solanhoccapdo1 = select_info($conn, "select * from t5h9ne6 where T5h9ne6_OvhV53 = ".$sodong1);
+	echo json_encode($solanhoccapdo1);
+	exit;
+}
+
+if (isset($_GET['xoasodong'])) {
+	$this->layout('Student/layout2');
+	$sodong1          = $_POST['sodong3'];
+	$combokhoahocmax1 = select_info($conn, "select MAX(T5h9ne6_OvhV53) from t5h9ne6");
+
+	if ($sodong1 > $combokhoahocmax1['MAX(T5h9ne6_OvhV53)']) {
+		$solanhoccapdo2 = select_info($conn, "select MAX(T5h9ne6_zkvesX) from t5h9ne6");
+		$solanhoccapdo1 = array(
+			"T5h9ne6_zkvesX" => $solanhoccapdo2['MAX(T5h9ne6_zkvesX)'],
+		);
+
+	} else {
+		$solanhoccapdo1 = select_info($conn, "select * from t5h9ne6 where T5h9ne6_OvhV53 = ".$sodong1);
+	}
+	echo json_encode($solanhoccapdo1);
+	exit;
+}
+
+if (isset($_GET['sodong'])) {
+	$this->layout('Student/layout2');
+	$sodong          = $_POST['sodong1'];
+	$combokhoahocmax = select_info($conn, "select MAX(T5h9ne6_OvhV53) from t5h9ne6");
+
+	if ($sodong > $combokhoahocmax['MAX(T5h9ne6_OvhV53)']) {//(1)
+		$solanhoccapdo1 = select_info($conn, "select MAX(T5h9ne6_zkvesX) from t5h9ne6");
+		$solanhoccapdo  = array(
+			"T5h9ne6_zkvesX" => $solanhoccapdo1['MAX(T5h9ne6_zkvesX)'],
+		);
+
+	} else {//(2)
+		$solanhoccapdo = select_info($conn, "select * from t5h9ne6 where T5h9ne6_OvhV53 = ".$sodong);
+	}
+	echo json_encode($solanhoccapdo);//$solanhoccapdo cái này vốn là 1 mảng mà.
+	// suy cho cùng đang muốn lấy cái chiết khấu tương ứng vs các combo thôi (5%,10%..)
+	exit;
+	// $sodong vẫn là số dòng của drawformanlist,$combokhoahocmax['MAX(T5h9ne6_OvhV53)'] là chính là cái số combo của nó(ví dụ học 2 lớp đc giảm 5%, 3 lớp giảm 10%) thì mình đang xét số
+	// dòng tương ứng vs số lớp nó học(2,3 như trên), nếu nó khuyến mãi lớn nhất là 10% thì dù có học nhiều lớp hơn cx chỉ 10% thôi(1) còn lại thì ngược lại là cái (2) là học nhỏ hơn hoặc bằng các combo(2,3);
+}
+
+if (isset($_GET['hocsinhvslop'])) {
+	$this->layout('Student/layout2');
+	$mahocsinh    = $_POST['mahocsinh'];
+	$khoahoc      = $_POST['khoahoc'];
+	$loi          = array();
+	$hocsinhvslop = select_list($conn, "select * from tyzh5in left join thlxe9r on Thlxe9r_DOi2tp = Tyzh5in_V0HrbI and Tyzh5in_yBpzNV = Thlxe9r_2cSJWq where Tyzh5in_yBpzNV = $mahocsinh and Tyzh5in_V0HrbI = " .$khoahoc);// trả về 1 mảng gồm tiền học và tiền đặt cọc
+
+	echo json_encode($hocsinhvslop);// đây là 1 mảng
+
+	exit;
+}
+?>
+<form id="formlon">
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Thông tin hợp đồng</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            </div>  <!-- /.box-tools -->
+        </div> <!-- /.box-header -->
+        <div class="box-body">
+            <div class="container">
+                <div class="col-md-3">
+                    <label>Mã học sinh</label>
+                    <select class="form-control chosen-select" id="mahocsinh" name="mahocsinh">
+                        <option value="0">---</option>
+<?php
+$mahocsinh = select_list($conn, "select * from tyj7o9k");
+foreach ($mahocsinh as $value) {
+	?>
+	                            <option value="<?=$value['Tyj7o9k_id']?>"><?=$value['Tyj7o9k_zn9b8t']?></option>
+	<?php
+}
+?>
+</select>
+                </div>
+
+                <div class="col-md-3">
+                    <label>Số hợp đồng</label>
+                    <input type="text" name="sohopdong" id="sohopdong" class="form-control">
+                </div>
+
+                <div class="col-md-3">
+                    <label>Loại thanh toán</label>
+                    <select class="form-control chosen-select" id="loaithanhtoan" name="loaithanhtoan"
+                            onchange="loaithanhtoan123()">
+                        <option value="0">---</option>
+<?php
+$loaithanhtoan = select_list($conn, "select * from tm5d4tv");
+foreach ($loaithanhtoan as $value) {
+	?>
+	                            <option value="<?=$value['Tm5d4tv_id']?>"><?=$value['Tm5d4tv_F1eLSM']?></option>
+	<?php // bước 4(kiểu nó thay đổi cái loại thanh toán thì mình chọn tới cái này) vì phải trả 1 cục thì nó ms có chiết khấu ấy
+}
+?>
+</select>
+                </div>
+                <script>
+                    function loaithanhtoan123() {
+                        var loaithanhtoan = $("#loaithanhtoan").val();
+                        //var chietkhau = $("#chietkhau").val();
+                        var tongtien = $("#tongtien").val();
+                        var datcoc = $("#datcoc").val();
+                        var sodong = $.parseJSON($("#iddata1").val());
+                        var sodong1 = sodong.length;
+                        if (loaithanhtoan == 1) {
+                            /*var tongphaithanhtoan1 = tongtien - datcoc - tongtien * (chietkhau / 100);
+                            $("#tongphaitt").val(tongphaithanhtoan1);*/
+                            $.ajax({
+                                url: "?loaithanhtoan",
+                                dataType: "json",
+                                data: {sodong1: sodong1},
+                                type: "POST",
+                                success: function (data) {
+                                    if (data != false) {
+                                        $("#chietkhau").val(data.T5h9ne6_zkvesX);
+                                        var chietkhau = $("#chietkhau").val();
+                                        var tongphaithanhtoan1 = tongtien - datcoc - tongtien * (chietkhau / 100);
+                                        $("#tongphaitt").val(tongphaithanhtoan1);
+                                    }
+                                },
+                                error: function () {
+                                }
+                            });
+
+                        } else {
+                            var chietkhau1 = $("#chietkhau").val(0);
+                            var tongphaithanhtoan2 = tongtien - datcoc;
+                            $("#tongphaitt").val(tongphaithanhtoan2);
+                        }
+                    }
+                </script>
+
+                <div class="col-md-3">
+                    <label>Khóa học</label>
+                    <select class="form-control chosen-select" id="khoahoc" name="khoahoc" onchange="hocsinhvslop()">
+                        <option value="0">---</option>
+<?php
+$khoa = select_list($conn, "select * from tbxn8g3 GROUP BY Tbxn8g3_hd7g3Q");
+foreach ($khoa as $value) {
+	?>
+	                            <option value="<?=$value['Tbxn8g3_id']?>"><?=$value['Tbxn8g3_hd7g3Q']?></option>
+	<?php
+}
+?>
+</select>
+                </div>
+            </div>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+
+            <div class="container">
+                <div class="col-md-3">
+                    <label>Tổng tiền</label>
+                    <input type="text" readonly="readonly" class="form-control" id="tongtien" name="tongtien">
+                </div>
+
+                <div class="col-md-3">
+                    <label>Chiết khấu</label>
+                    <input type="text" readonly="readonly" class="form-control" id="chietkhau" name="chietkhau">
+                </div>
+
+                <div class="col-md-3">
+                    <label>Đặt cọc</label>
+                    <input type="text" readonly="readonly" class="form-control" id="datcoc" name="datcoc">
+                </div>
+
+                <div class="col-md-3">
+                    <label>Tổng phải thanh toán</label>
+                    <input type="text" readonly="readonly" class="form-control" id="tongphaitt" name="tongphaitt">
+                </div>
+
+            </div>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <div class="container">
+                <div class="col-md-3">
+                    <label>Số tiền thanh toán</label>
+                    <input type="text" class="form-control" id="sotienphaitt" name="sotienphaitt"
+                           onchange="sotienthanhtoan()">  bước 3
+                </div>
+                <script>
+                    function sotienthanhtoan() {
+                        var sotienphaitt = $("#sotienphaitt").val();
+                        var tongphaitt = $("#tongphaitt").val();
+                        var conlai = tongphaitt - sotienphaitt;
+                        if (conlai >= 0) {
+                            $("#conlai").val(conlai);
+                        } else {
+                            $("#conlai").val(0);
+                        }
+                    }
+                </script>
+                <div class="col-md-3">
+                    <label>Còn lại</label>
+                    <input type="text" class="form-control" id="conlai" name="conlai">
+                </div>
+
+                <div class="col-md-3">
+                    <label>Ngày ký</label>
+                    <input type="date" class="form-control" id="ngayky" name="ngayky">
+                </div>
+
+                <div class="col-md-3">
+                    <label>Hạn thanh toán</label>
+                    <input type="date" class="form-control" id="hanthanhtoan" name="hanthanhtoan">
+                </div>
+            </div>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <div class="container">
+                <div class="col-md-3">
+                    <label>Nhân viên kinh doanh</label>
+                    <select class="form-control chosen-select" id="nhanvienkd" name="nhanvienkd">
+                        <option value="0">---</option>
+<?php
+$nhanvien = select_list($conn, "select * from targyes");
+foreach ($nhanvien as $value) {
+	?>
+	                            <option value="<?=$value['Targyes_id']?>"><?=$value['Targyes_MOTcaA']?></option>
+	<?php
+}
+?>
+</select>
+                </div>
+            </div>
+
+        </div> <!-- /.box-body -->
+        <div class="box-footer">
+        </div><!-- /.box-body -->
+    </div><!-- /.box -->
+
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Chi tiết hợp đồng</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            </div>  <!-- /.box-tools -->
+        </div> <!-- /.box-header -->
+        <div class="box-body">
+            <div class="container">
+<?php
+$data1 = array(
+	array(
+		'name'    => 'Tjxzrka_2vjlQY',
+		'id'      => 'Tjxzrka_2vjlQY',
+		'show'    => 'Cấp độ',
+		'type'    => 'chose',
+		'wid'     => 3,
+		'option'  => 'onchange="capdo()"',
+		'reset'   => 'yes',
+		'require' => 'yes',
+		'code'    => 'Tjxzrka_2vjlQY',
+	),
+
+	array(
+		'name'    => 'thoigian',
+		'id'      => 'thoigian',
+		'show'    => 'Thời gian(tháng)',
+		'type'    => 'number',
+		'wid'     => 3,
+		'option'  => '',
+		'reset'   => 'yes',
+		'require' => 'no',
+	),
+
+	array(
+		'name'    => 'hocphi1thang',
+		'id'      => 'hocphi1thang',
+		'show'    => 'Học phí 1 tháng',
+		'type'    => 'number',
+		'wid'     => 3,
+		'option'  => '',
+		'reset'   => 'yes',
+		'require' => 'no',
+	),
+
+	array(
+		'name'    => 'tongtien1',
+		'id'      => 'tongtien1',
+		'show'    => 'Tổng tiền',
+		'type'    => 'number',
+		'wid'     => 3,
+		'option'  => '',
+		'reset'   => 'yes',
+		'require' => 'no',
+	)
+);
+drawformandlist($conn, $data1, 'iddata1', 'idsua1', 'idbtadd1', 'fname1', $ona, 'tinhlaikhixoa()');// tinhlaikhixoa() đang viết ở chỗ adddelete là nút xóa đó
+?>
+</div>
+            <div class="container" style="text-align: center">
+                <button class="btn btn-success">Xác nhận</button>
+            </div>
+        </div> <!-- /.box-body -->
+        <div class="box-footer">
+        </div><!-- /.box-body -->
+    </div><!-- /.box -->
+</form>
+
+<script>
+    function tinhlaikhixoa() {  // nếu ấn nút xóa( trong drawfom còn cả nút addelete, và adedit)
+
+        var sodong2 = $.parseJSON($("#iddata1").val());
+        var sodong3 = sodong2.length;
+        var loaithanhtoan1 = $("#loaithanhtoan").val();
+        //console.log(sodong2);
+        $.ajax({
+            url: "?xoasodong",
+            dataType: "json",
+            data: {sodong3: sodong3},
+            type: "POST",
+            success: function (data) {
+                if (data != false && loaithanhtoan1 == 1) {
+                    $("#chietkhau").val(data.T5h9ne6_zkvesX);
+                    chietkhau();
+                } else {
+                    $("#chietkhau").val(0);
+                }
+            },
+            error: function () {
+            }
+        });
+    }
+
+    function hocsinhvslop() { // bước 1
+        var mahocsinh = $("#mahocsinh").val();
+        var khoahoc = $("#khoahoc").val();
+        $.ajax({
+            url: "/tmvgl7u?hocsinhvslop",
+            dataType: "json",
+            data: {mahocsinh: mahocsinh, khoahoc: khoahoc},
+            type: "POST",
+            success: function (data) {
+                if (data == null || data == 0) { // nếu k có dữ liệu trả về
+                    makeSAlert("học sinh này không học trong lớp", 2000);
+                } else {  // trả về đây là nhiều chuỗi mà, học sinh Hùng có thể đăng kí học nhiều
+                    // lớp(học sinh tron lớp), nên có thể gồm 3,4 mảng trả về(select_list)
+                    var a = data.length;
+                    var tongtien = 0;
+                    var datcoc = 0;
+                    for (i = 0; i < data.length; i++) {
+                        tongtien = tongtien * 1 + data[i].Tyzh5in_kh7xNP * 1; // tổng tiền tk đấy học trong các lớp
+                        var datcoc = data[i].Thlxe9r_WN0abH * 1;
+                    }
+                    $("#tongtien").val(tongtien);
+                    $("#datcoc").val(datcoc);
+                    var tongtien = $("#tongtien").val();
+                    var datcoc = $("#datcoc").val();
+                    var tongphaithanhtoan1 = tongtien - datcoc;
+                    $("#tongphaitt").val(tongphaithanhtoan1);
+                }
+            },
+            error: function () {
+            }
+        });
+    }
+
+    function chietkhau() { // bước 2
+        var chietkhau = $("#chietkhau").val();
+        var tongtien = $("#tongtien").val();
+        var datcoc = $("#datcoc").val();
+        var tongphaithanhtoan1 = tongtien - datcoc - tongtien * (chietkhau / 100);
+        $("#tongphaitt").val(tongphaithanhtoan1);
+    }
+
+
+    $(document).ready(function () { // buoiwcs 6, đếm số dòng
+        var loaithanhtoan = $("#loaithanhtoan").val();
+        $("#idbtadd1").click(function () {
+            var sodong = $.parseJSON($("#iddata1").val()); // cái này là của hàm drawformmanlist
+            // đó là truyền hết các dữ liệu khi ấn chữ thêm vào 1 ô input ẩn dưới dạng
+            // chuỗi json(1 dòng tương ứng là 1 chuỗi và có nhiều dòng thì nhiều chuỗi)
+            // đây là id của ô input ẩn(id="iddata1"), bây giờ mình đang đưa về dạng đối tượng
+            // của json
+            var sodong1 = sodong.length; // đếm số đối tượng
+            var loaithanhtoan = $("#loaithanhtoan").val();
+            $.ajax({
+                url: "?sodong",
+                dataType: "json",
+                data: {sodong1: sodong1}, //(select_info)
+                type: "POST",
+                success: function (data) {                  //loaithanhtoan == 1
+                    if (data != false && loaithanhtoan == 1) { // nếu là trả tiền luôn 1 cục ấy.
+                        $("#chietkhau").val(data.T5h9ne6_zkvesX); // đây là chiết khấu trả về
+                        // lúc này ở ô chiết khấu sẽ xuất hiện % nên mình phải tính tiền ở các ô
+                        // tiền phải thanh toán, ô còn lại...
+                        chietkhau();
+                        sotienthanhtoan();
+                    } else {
+                        $("#chietkhau").val(0);
+                    }
+                },
+                error: function () {
+                }
+            });
+
+        });
+
+    });
+
+    function capdo() {  // bước 5
+        var khoahoc = $("#khoahoc").val();
+        var capdo = $("#Tjxzrka_2vjlQY").val();
+        $.ajax({
+            url: "?capdo",
+            dataType: "json",
+            data: {capdo: capdo, khoahoc: khoahoc},
+            type: "POST",                  //select_info
+            success: function (data) {
+                var thang = data.Tbxn8g3_VkFbv1R * 1;
+                var hocphi1thang = data.Tbxn8g3_rJxO4q * 1;
+                var tongtien1 = data.Tbxn8g3_Qa9lRY * 1;
+                $("#thoigian").val(thang);
+                $("#hocphi1thang").val(hocphi1thang);
+                $("#tongtien1").val(tongtien1);
+            },
+            error: function () {
+            }
+        });
+    }
+
+    $('#formlon').on('submit', function (e) {
+        e.preventDefault();
+        var formData = new FormData($(this)[0]);
+        formData.append('submitform', '');
+        $.ajax({
+            type: 'post',
+            url: '/tmvgl7u',
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+
+                //makeSAlert(data,5000);
+                //$("#catlist").load(location.href + " #catlist");
+                //$("#noti").html(data);
+                //window.setTimeout(function(){location.reload()},1000);
+            }
+        }); //End Ajax
+    }); //End submit
+</script>

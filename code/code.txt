@@ -1,0 +1,15 @@
+ $(document).ready(function () {
+        $('#lsx').val(0).trigger('chosen:updated');
+    });
+// chon 1 gia tri dau tien cho cai o select trong js, #lsx la id cua cai select val(0) la lay cai
+option co gia tri = 0
+
+	<?php if (!empty($_GET['Tea4boi_uRPbil'])) {
+					?>
+                    <script>
+                        $('#Tea4boi_uRPbil').val("<?php echo $_GET['Tea4boi_uRPbil']; ?>").trigger('chosen:updated');
+                    </script>
+					<?php
+				} ?>
+// do?n này có nghia là n?u dang ch?n 1 giá tr? cho 1 ô seletc thì có reload l?i trang nó v?n gi? nguyên giá
+tr? dó

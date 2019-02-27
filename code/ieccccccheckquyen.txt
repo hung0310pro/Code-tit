@@ -1,0 +1,3 @@
+$currentuser = select_info($conn, 'select * from tzm9s3f inner join user on Tzm9s3f_xObL2i = Name inner join tqy1jil on Tzm9s3f_S7bo8C = Tqy1jil_id where Id = ' . $User);
+		$trungtam = $currentuser['Tzm9s3f_S7bo8C'];
+		$daili = $currentuser['Tqy1jil_VohE2b'];

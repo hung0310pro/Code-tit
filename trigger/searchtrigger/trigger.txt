@@ -1,0 +1,109 @@
+BEGIN
+DECLARE done INT DEFAULT FALSE;
+DECLARE done1 INT DEFAULT FALSE;
+DECLARE ngaybd DATE;
+DECLARE bdnghile DATE;
+DECLARE ktnghile DATE;
+DECLARE sobuoihoc INT;
+DECLARE checktkb INT;
+DECLARE thuhoc INT;
+DECLARE idthuhoc INT;
+DECLARE flag1 INT;
+Declare checkl int DEFAULT 0;
+DECLARE dstkb CURSOR FOR SELECT Tea4boi_BFMxnI FROM tea4boi WHERE Tea4boi_6Zfvbk = NEW.Tjxzrka_id;
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+SET ngaybd = NEW.Tjxzrka_RGElDT;
+SET sobuoihoc = NEW.Tjxzrka_nKldo4;
+
+SET checktkb = (select count(*) FROM tea4boi WHERE Tea4boi_6Zfvbk = NEW.Tjxzrka_id);
+
+IF checktkb > 0 THEN
+IF DAYOFWEEK(ngaybd) = DAYOFWEEK(NOW()) THEN 
+SET flag1 = 1;
+END IF;
+IF DAYOFWEEK(ngaybd) <> DAYOFWEEK(NOW()) THEN
+SET flag1 = 0;
+END IF;
+
+myloop : WHILE(flag1 < sobuoihoc) DO
+set checkl = checkl+1;
+BEGIN
+DECLARE nghile CURSOR FOR SELECT Thqwzod_3NXaru,Thqwzod_CsULn1 FROM thqwzod; 
+
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET done1 = TRUE;
+OPEN nghile;
+ins_loop1: LOOP
+FETCH nghile INTO bdnghile,ktnghile;
+IF done1 THEN
+LEAVE ins_loop1;
+END IF;
+
+IF ngaybd between bdnghile AND ktnghile THEN 
+SET flag1 = flag1 - 1;
+END IF;
+END LOOP;
+CLOSE nghile;
+SET done1 = FALSE;
+END;
+
+OPEN dstkb;
+ins_loop: LOOP
+FETCH dstkb INTO thuhoc;
+IF done THEN
+LEAVE ins_loop;
+END IF;
+IF thuhoc = 59 THEN
+SET idthuhoc =1 ;
+END IF;
+
+IF thuhoc = 53 THEN
+SET idthuhoc =2 ;
+END IF;
+
+IF thuhoc = 54 THEN
+SET idthuhoc =3 ;
+END IF;
+
+IF thuhoc = 55 THEN
+SET idthuhoc =4 ;
+END IF;
+
+IF thuhoc = 56 THEN
+SET idthuhoc =5 ;
+END IF;
+
+IF thuhoc =57 THEN
+SET idthuhoc =6 ;
+END IF;
+
+IF thuhoc = 58 THEN
+SET idthuhoc =7 ;
+END IF;
+IF DAYOFWEEK(ngaybd) = idthuhoc THEN
+SET flag1 = flag1 + 1;
+END IF;
+END LOOP;
+CLOSE dstkb; 
+SET done = FALSE;
+SET NEW.Tjxzrka_liMTtb = ngaybd;
+SET ngaybd = DATE_ADD(ngaybd,INTERVAL 1 DAY);
+if (checkl >= 1000) then 
+LEAVE myloop;
+end if;
+END WHILE myloop;
+END IF;
+END
+
+
+if(ngaybdnghi != ngayktnghi){
+IF ngaybd between bdnghile AND ktnghile THEN 
+SET flag1 = flag1 - 1;
+END IF;
+}
+
+if(ngaybdnghi == ngayktnghi){
+IF ngaybd == ngaybd THEN 
+SET flag1 = flag1 - 1;
+END IF;
+}
